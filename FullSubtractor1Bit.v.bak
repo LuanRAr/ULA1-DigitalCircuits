@@ -1,0 +1,18 @@
+module FullSubtractor1Bit(A, B, Cin, Cout, S);
+input A, B, Cin;
+output Cout, S;
+
+wire x1, a1, a2, a3;
+wire w_notA;
+
+xor xor1 (x1, A, B);
+xor xor2 (S, x1, Cin);
+
+not notA (w_notA, A);
+and and1 (a1, w_notA, B);
+and and2 (a2, w_notA, Cin);
+and and3 (a3, B, Cin);
+
+or or1 (Cout, a1, a2, a3);
+
+endmodule

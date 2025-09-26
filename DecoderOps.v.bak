@@ -1,0 +1,56 @@
+module DecoderOps(A, B, C, a, b, c, d, e, f, g);
+input A, B, C;
+output a, b, c, d, e, f, g;
+
+wire not_A, not_B, not_C;
+
+wire p0, p1, p2, p3, p4, p5, p6, p7;
+
+wire a_out, b_out, c_out, d_out, e_out, f_out, g_out;
+
+not nA(not_A, A);
+not nB(not_B, B);
+not nC(not_C, C);
+
+//000
+and and0(p0, not_A, not_B, not_C);
+
+//001
+and and1(p1, not_A, not_B, C);
+
+//010
+and and2(p2, not_A, B, not_C);
+
+//011
+and and3(p3, not_A, B, C);
+
+//100
+and and4(p4, A,  not_B, not_C);
+
+//101
+and and5(p5, A, not_B, C);
+
+//110
+and and6(p6, A, B, not_C);
+
+//111
+and and7(p7, A, B, C);
+
+or or_a(a_out, p0, p3, p4, p7);
+or or_b(b_out, p0, p2, p4, p6);
+or or_c(c_out, p0, p6);
+or or_d(d_out, p0, p1, p4, p7);
+or or_e(e_out, p0, p2);
+or or_f(f_out, p0, p3, p4);
+or or_g(g_out, p0, p5);
+
+not inv_A(a, a_out); //a
+not inv_B(b, b_out); //b
+not inv_C(c, c_out); //c
+not inv_D(d, d_out); //d
+not inv_E(e, e_out); //e
+not inv_F(f, f_out); //f
+not inv_G(g, g_out); //g
+
+
+endmodule

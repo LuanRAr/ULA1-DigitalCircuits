@@ -1,0 +1,650 @@
+Analysis & Synthesis report for PBL1CD
+Wed Sep 24 22:01:12 2025
+Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Port Connectivity Checks: "mux8to1:muxCout"
+ 11. Port Connectivity Checks: "mux8to1:mux7"
+ 12. Port Connectivity Checks: "mux8to1:mux6"
+ 13. Port Connectivity Checks: "mux8to1:mux5"
+ 14. Port Connectivity Checks: "mux8to1:mux4"
+ 15. Port Connectivity Checks: "mux8to1:mux3"
+ 16. Port Connectivity Checks: "mux8to1:mux2"
+ 17. Port Connectivity Checks: "mux8to1:mux1"
+ 18. Port Connectivity Checks: "mux8to1:mux0"
+ 19. Port Connectivity Checks: "Divider:divider4bit"
+ 20. Port Connectivity Checks: "Multiplier:multiplier4bit|FullAdder4Bit:add3"
+ 21. Port Connectivity Checks: "Multiplier:multiplier4bit|FullAdder4Bit:add2"
+ 22. Port Connectivity Checks: "Multiplier:multiplier4bit|FullAdder4Bit:add1"
+ 23. Post-Synthesis Netlist Statistics for Top Partition
+ 24. Elapsed Time Per Partition
+ 25. Analysis & Synthesis Messages
+ 26. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Sep 24 22:01:12 2025           ;
+; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
+; Revision Name                      ; PBL1CD                                          ;
+; Top-level Entity Name              ; main                                            ;
+; Family                             ; MAX 10                                          ;
+; Total logic elements               ; 90                                              ;
+;     Total combinational functions  ; 90                                              ;
+;     Dedicated logic registers      ; 0                                               ;
+; Total registers                    ; 0                                               ;
+; Total pins                         ; 44                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
+; UFM blocks                         ; 0                                               ;
+; ADC blocks                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 10M50DAF484C7G     ;                    ;
+; Top-level entity name                                            ; main               ; PBL1CD             ;
+; Family name                                                      ; MAX 10             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                   ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                     ; Library ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------+---------+
+; ResultConverter.v                ; yes             ; User Verilog HDL File  ; C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/ResultConverter.v    ;         ;
+; Divider.v                        ; yes             ; User Verilog HDL File  ; C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/Divider.v            ;         ;
+; Multiplier.v                     ; yes             ; User Verilog HDL File  ; C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/Multiplier.v         ;         ;
+; DecoderOps.v                     ; yes             ; User Verilog HDL File  ; C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/DecoderOps.v         ;         ;
+; main.v                           ; yes             ; User Verilog HDL File  ; C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v               ;         ;
+; FullSubtractor4Bit.v             ; yes             ; User Verilog HDL File  ; C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/FullSubtractor4Bit.v ;         ;
+; FullSubtractor1Bit.v             ; yes             ; User Verilog HDL File  ; C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/FullSubtractor1Bit.v ;         ;
+; mux8to1.v                        ; yes             ; User Verilog HDL File  ; C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/mux8to1.v            ;         ;
+; mux4to1.v                        ; yes             ; User Verilog HDL File  ; C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/mux4to1.v            ;         ;
+; mux2to1.v                        ; yes             ; User Verilog HDL File  ; C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/mux2to1.v            ;         ;
+; FullAdder4Bit.v                  ; yes             ; User Verilog HDL File  ; C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/FullAdder4Bit.v      ;         ;
+; FullAdder1Bit.v                  ; yes             ; User Verilog HDL File  ; C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/FullAdder1Bit.v      ;         ;
+; Or4bit.v                         ; yes             ; User Verilog HDL File  ; C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/Or4bit.v             ;         ;
+; Xor4bit.v                        ; yes             ; User Verilog HDL File  ; C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/Xor4bit.v            ;         ;
+; And4bit.v                        ; yes             ; User Verilog HDL File  ; C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/And4bit.v            ;         ;
+; DecoderResults.v                 ; yes             ; User Verilog HDL File  ; C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/DecoderResults.v     ;         ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                     ;
++---------------------------------------------+-------------------+
+; Resource                                    ; Usage             ;
++---------------------------------------------+-------------------+
+; Estimated Total logic elements              ; 90                ;
+;                                             ;                   ;
+; Total combinational functions               ; 90                ;
+; Logic element usage by number of LUT inputs ;                   ;
+;     -- 4 input functions                    ; 56                ;
+;     -- 3 input functions                    ; 26                ;
+;     -- <=2 input functions                  ; 8                 ;
+;                                             ;                   ;
+; Logic elements by mode                      ;                   ;
+;     -- normal mode                          ; 90                ;
+;     -- arithmetic mode                      ; 0                 ;
+;                                             ;                   ;
+; Total registers                             ; 0                 ;
+;     -- Dedicated logic registers            ; 0                 ;
+;     -- I/O registers                        ; 0                 ;
+;                                             ;                   ;
+; I/O pins                                    ; 44                ;
+;                                             ;                   ;
+; Embedded Multiplier 9-bit elements          ; 0                 ;
+;                                             ;                   ;
+; Maximum fan-out node                        ; Selector[0]~input ;
+; Maximum fan-out                             ; 22                ;
+; Total fan-out                               ; 386               ;
+; Average fan-out                             ; 2.17              ;
++---------------------------------------------+-------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                   ;
++----------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------------+--------------------+--------------+
+; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                 ; Entity Name        ; Library Name ;
++----------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------------+--------------------+--------------+
+; |main                                  ; 90 (3)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 44   ; 0            ; 0          ; |main                                                               ; main               ; work         ;
+;    |DecoderOps:decoderoperacoes|       ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|DecoderOps:decoderoperacoes                                   ; DecoderOps         ; work         ;
+;    |DecoderResults:decoderUnits|       ; 6 (6)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|DecoderResults:decoderUnits                                   ; DecoderResults     ; work         ;
+;    |Divider:divider4bit|               ; 16 (16)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|Divider:divider4bit                                           ; Divider            ; work         ;
+;    |FullAdder4Bit:adder|               ; 4 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|FullAdder4Bit:adder                                           ; FullAdder4Bit      ; work         ;
+;       |FullAdder1Bit:a0|               ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|FullAdder4Bit:adder|FullAdder1Bit:a0                          ; FullAdder1Bit      ; work         ;
+;       |FullAdder1Bit:a1|               ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|FullAdder4Bit:adder|FullAdder1Bit:a1                          ; FullAdder1Bit      ; work         ;
+;       |FullAdder1Bit:a2|               ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|FullAdder4Bit:adder|FullAdder1Bit:a2                          ; FullAdder1Bit      ; work         ;
+;    |FullSubtractor4Bit:subtractor|     ; 7 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|FullSubtractor4Bit:subtractor                                 ; FullSubtractor4Bit ; work         ;
+;       |FullSubtractor1Bit:s0|          ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|FullSubtractor4Bit:subtractor|FullSubtractor1Bit:s0           ; FullSubtractor1Bit ; work         ;
+;       |FullSubtractor1Bit:s1|          ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|FullSubtractor4Bit:subtractor|FullSubtractor1Bit:s1           ; FullSubtractor1Bit ; work         ;
+;       |FullSubtractor1Bit:s2|          ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|FullSubtractor4Bit:subtractor|FullSubtractor1Bit:s2           ; FullSubtractor1Bit ; work         ;
+;       |FullSubtractor1Bit:s3|          ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|FullSubtractor4Bit:subtractor|FullSubtractor1Bit:s3           ; FullSubtractor1Bit ; work         ;
+;    |Multiplier:multiplier4bit|         ; 18 (2)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|Multiplier:multiplier4bit                                     ; Multiplier         ; work         ;
+;       |FullAdder4Bit:add1|             ; 6 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|Multiplier:multiplier4bit|FullAdder4Bit:add1                  ; FullAdder4Bit      ; work         ;
+;          |FullAdder1Bit:a1|            ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|Multiplier:multiplier4bit|FullAdder4Bit:add1|FullAdder1Bit:a1 ; FullAdder1Bit      ; work         ;
+;          |FullAdder1Bit:a2|            ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|Multiplier:multiplier4bit|FullAdder4Bit:add1|FullAdder1Bit:a2 ; FullAdder1Bit      ; work         ;
+;          |FullAdder1Bit:a3|            ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|Multiplier:multiplier4bit|FullAdder4Bit:add1|FullAdder1Bit:a3 ; FullAdder1Bit      ; work         ;
+;       |FullAdder4Bit:add2|             ; 4 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|Multiplier:multiplier4bit|FullAdder4Bit:add2                  ; FullAdder4Bit      ; work         ;
+;          |FullAdder1Bit:a1|            ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|Multiplier:multiplier4bit|FullAdder4Bit:add2|FullAdder1Bit:a1 ; FullAdder1Bit      ; work         ;
+;          |FullAdder1Bit:a2|            ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|Multiplier:multiplier4bit|FullAdder4Bit:add2|FullAdder1Bit:a2 ; FullAdder1Bit      ; work         ;
+;          |FullAdder1Bit:a3|            ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|Multiplier:multiplier4bit|FullAdder4Bit:add2|FullAdder1Bit:a3 ; FullAdder1Bit      ; work         ;
+;       |FullAdder4Bit:add3|             ; 6 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|Multiplier:multiplier4bit|FullAdder4Bit:add3                  ; FullAdder4Bit      ; work         ;
+;          |FullAdder1Bit:a1|            ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|Multiplier:multiplier4bit|FullAdder4Bit:add3|FullAdder1Bit:a1 ; FullAdder1Bit      ; work         ;
+;          |FullAdder1Bit:a2|            ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|Multiplier:multiplier4bit|FullAdder4Bit:add3|FullAdder1Bit:a2 ; FullAdder1Bit      ; work         ;
+;          |FullAdder1Bit:a3|            ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|Multiplier:multiplier4bit|FullAdder4Bit:add3|FullAdder1Bit:a3 ; FullAdder1Bit      ; work         ;
+;    |ResultConverter:ResultToConverter| ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|ResultConverter:ResultToConverter                             ; ResultConverter    ; work         ;
+;    |mux8to1:mux0|                      ; 4 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|mux8to1:mux0                                                  ; mux8to1            ; work         ;
+;       |mux4to1:mux5|                   ; 4 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|mux8to1:mux0|mux4to1:mux5                                     ; mux4to1            ; work         ;
+;          |mux2to1:mux2|                ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|mux8to1:mux0|mux4to1:mux5|mux2to1:mux2                        ; mux2to1            ; work         ;
+;          |mux2to1:mux3|                ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|mux8to1:mux0|mux4to1:mux5|mux2to1:mux3                        ; mux2to1            ; work         ;
+;    |mux8to1:mux1|                      ; 7 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|mux8to1:mux1                                                  ; mux8to1            ; work         ;
+;       |mux2to1:mux1|                   ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|mux8to1:mux1|mux2to1:mux1                                     ; mux2to1            ; work         ;
+;       |mux4to1:mux5|                   ; 6 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|mux8to1:mux1|mux4to1:mux5                                     ; mux4to1            ; work         ;
+;          |mux2to1:mux3|                ; 6 (6)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|mux8to1:mux1|mux4to1:mux5|mux2to1:mux3                        ; mux2to1            ; work         ;
+;    |mux8to1:mux2|                      ; 6 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|mux8to1:mux2                                                  ; mux8to1            ; work         ;
+;       |mux2to1:mux1|                   ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|mux8to1:mux2|mux2to1:mux1                                     ; mux2to1            ; work         ;
+;       |mux4to1:mux5|                   ; 5 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|mux8to1:mux2|mux4to1:mux5                                     ; mux4to1            ; work         ;
+;          |mux2to1:mux3|                ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|mux8to1:mux2|mux4to1:mux5|mux2to1:mux3                        ; mux2to1            ; work         ;
+;    |mux8to1:mux3|                      ; 7 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|mux8to1:mux3                                                  ; mux8to1            ; work         ;
+;       |mux2to1:mux1|                   ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|mux8to1:mux3|mux2to1:mux1                                     ; mux2to1            ; work         ;
+;       |mux4to1:mux5|                   ; 6 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|mux8to1:mux3|mux4to1:mux5                                     ; mux4to1            ; work         ;
+;          |mux2to1:mux3|                ; 6 (6)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|mux8to1:mux3|mux4to1:mux5|mux2to1:mux3                        ; mux2to1            ; work         ;
+;    |mux8to1:muxCout|                   ; 4 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|mux8to1:muxCout                                               ; mux8to1            ; work         ;
+;       |mux4to1:mux5|                   ; 4 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|mux8to1:muxCout|mux4to1:mux5                                  ; mux4to1            ; work         ;
+;          |mux2to1:mux3|                ; 4 (4)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|mux8to1:muxCout|mux4to1:mux5|mux2to1:mux3                     ; mux2to1            ; work         ;
++----------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------------+--------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; 7:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |main|mux8to1:mux1|mux4to1:mux5|mux2to1:mux3|Or0 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+
+
++---------------------------------------------+
+; Port Connectivity Checks: "mux8to1:muxCout" ;
++--------+-------+----------+-----------------+
+; Port   ; Type  ; Severity ; Details         ;
++--------+-------+----------+-----------------+
+; NotUse ; Input ; Info     ; Stuck at GND    ;
+; Mul    ; Input ; Info     ; Stuck at GND    ;
+; Div    ; Input ; Info     ; Stuck at GND    ;
+; And    ; Input ; Info     ; Stuck at GND    ;
+; Or     ; Input ; Info     ; Stuck at GND    ;
+; Xor    ; Input ; Info     ; Stuck at GND    ;
++--------+-------+----------+-----------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mux8to1:mux7"                                                                                                                                                                         ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; NotUse     ; Input ; Warning  ; Input port expression (8 bits) is wider than the input port (1 bits) it drives.  The 7 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; NotUse[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                     ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mux8to1:mux6"                                                                                                                                                                         ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; NotUse     ; Input ; Warning  ; Input port expression (8 bits) is wider than the input port (1 bits) it drives.  The 7 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; NotUse[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                     ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mux8to1:mux5"                                                                                                                                                                         ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; NotUse     ; Input ; Warning  ; Input port expression (8 bits) is wider than the input port (1 bits) it drives.  The 7 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; NotUse[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                     ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mux8to1:mux4"                                                                                                                                                                         ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; NotUse     ; Input ; Warning  ; Input port expression (8 bits) is wider than the input port (1 bits) it drives.  The 7 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; NotUse[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                     ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mux8to1:mux3"                                                                                                                                                                         ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; NotUse     ; Input ; Warning  ; Input port expression (8 bits) is wider than the input port (1 bits) it drives.  The 7 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; NotUse[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                     ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mux8to1:mux2"                                                                                                                                                                         ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; NotUse     ; Input ; Warning  ; Input port expression (8 bits) is wider than the input port (1 bits) it drives.  The 7 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; NotUse[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                     ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mux8to1:mux1"                                                                                                                                                                         ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; NotUse     ; Input ; Warning  ; Input port expression (8 bits) is wider than the input port (1 bits) it drives.  The 7 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; NotUse[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                     ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mux8to1:mux0"                                                                                                                                                                         ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; NotUse     ; Input ; Warning  ; Input port expression (8 bits) is wider than the input port (1 bits) it drives.  The 7 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; NotUse[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                     ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Divider:divider4bit"                                                                                                                                                  ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                                               ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Q    ; Output ; Warning  ; Output or bidir port (4 bits) is smaller than the port expression (8 bits) it drives.  The 4 most-significant bit(s) in the port expression will be connected to GND. ;
+; R    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                              ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Multiplier:multiplier4bit|FullAdder4Bit:add3"                                                                                                                                       ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                                                                                          ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; B       ; Input  ; Warning  ; Input port expression (7 bits) is wider than the input port (4 bits) it drives.  The 3 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; B[2..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                     ;
+; S       ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (4 bits) it drives; bit(s) "S[7..4]" have no fanouts                                                             ;
+; S[4]    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
+; Cout    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Multiplier:multiplier4bit|FullAdder4Bit:add2"                                                                                                                                       ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                                                                                          ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; B       ; Input  ; Warning  ; Input port expression (7 bits) is wider than the input port (4 bits) it drives.  The 3 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; B[1..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                     ;
+; S       ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (4 bits) it drives; bit(s) "S[7..4]" have no fanouts                                                             ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Multiplier:multiplier4bit|FullAdder4Bit:add1"                                                                                                                                    ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                                                          ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; A    ; Input  ; Warning  ; Input port expression (7 bits) is wider than the input port (4 bits) it drives.  The 3 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; B    ; Input  ; Warning  ; Input port expression (7 bits) is wider than the input port (4 bits) it drives.  The 3 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; B[0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                     ;
+; Cin  ; Input  ; Info     ; Stuck at GND                                                                                                                                                                     ;
+; S    ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (4 bits) it drives; bit(s) "S[7..4]" have no fanouts                                                             ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 44                          ;
+; cycloneiii_lcell_comb ; 97                          ;
+;     normal            ; 97                          ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 8                           ;
+;         3 data inputs ; 26                          ;
+;         4 data inputs ; 56                          ;
+;                       ;                             ;
+; Max LUT depth         ; 12.00                       ;
+; Average LUT depth     ; 8.44                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+    Info: Processing started: Wed Sep 24 22:01:04 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PBL1CD -c PBL1CD
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file resultconverter.v
+    Info (12023): Found entity 1: ResultConverter File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/ResultConverter.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file divider.v
+    Info (12023): Found entity 1: Divider File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/Divider.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file multiplier.v
+    Info (12023): Found entity 1: Multiplier File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/Multiplier.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file decoderops.v
+    Info (12023): Found entity 1: DecoderOps File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/DecoderOps.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file main.v
+    Info (12023): Found entity 1: main File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file fullsubtractor4bit.v
+    Info (12023): Found entity 1: FullSubtractor4Bit File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/FullSubtractor4Bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file fullsubtractor1bit.v
+    Info (12023): Found entity 1: FullSubtractor1Bit File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/FullSubtractor1Bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux8to1.v
+    Info (12023): Found entity 1: mux8to1 File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/mux8to1.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux4to1.v
+    Info (12023): Found entity 1: mux4to1 File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/mux4to1.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux2to1.v
+    Info (12023): Found entity 1: mux2to1 File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/mux2to1.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file fulladder4bit.v
+    Info (12023): Found entity 1: FullAdder4Bit File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/FullAdder4Bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file fulladder1bit.v
+    Info (12023): Found entity 1: FullAdder1Bit File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/FullAdder1Bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file or4bit.v
+    Info (12023): Found entity 1: Or4bit File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/Or4bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file xor4bit.v
+    Info (12023): Found entity 1: Xor4bit File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/Xor4bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file and4bit.v
+    Info (12023): Found entity 1: And4bit File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/And4bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file decoderresults.v
+    Info (12023): Found entity 1: DecoderResults File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/DecoderResults.v Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at ResultConverter.v(82): created implicit net for "u3_t6" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/ResultConverter.v Line: 82
+Warning (10236): Verilog HDL Implicit Net warning at Divider.v(183): created implicit net for "sel2a0" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/Divider.v Line: 183
+Warning (10236): Verilog HDL Implicit Net warning at Divider.v(183): created implicit net for "sel2b0" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/Divider.v Line: 183
+Warning (10236): Verilog HDL Implicit Net warning at Divider.v(184): created implicit net for "sel2a1" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/Divider.v Line: 184
+Warning (10236): Verilog HDL Implicit Net warning at Divider.v(184): created implicit net for "sel2b1" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/Divider.v Line: 184
+Warning (10236): Verilog HDL Implicit Net warning at Divider.v(185): created implicit net for "sel2a2" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/Divider.v Line: 185
+Warning (10236): Verilog HDL Implicit Net warning at Divider.v(185): created implicit net for "sel2b2" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/Divider.v Line: 185
+Warning (10236): Verilog HDL Implicit Net warning at Divider.v(186): created implicit net for "sel2a3" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/Divider.v Line: 186
+Warning (10236): Verilog HDL Implicit Net warning at Divider.v(186): created implicit net for "sel2b3" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/Divider.v Line: 186
+Warning (10236): Verilog HDL Implicit Net warning at Divider.v(187): created implicit net for "sel2a4" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/Divider.v Line: 187
+Warning (10236): Verilog HDL Implicit Net warning at Divider.v(187): created implicit net for "sel2b4" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/Divider.v Line: 187
+Warning (10236): Verilog HDL Implicit Net warning at Divider.v(248): created implicit net for "sel3a0" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/Divider.v Line: 248
+Warning (10236): Verilog HDL Implicit Net warning at Divider.v(248): created implicit net for "sel3b0" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/Divider.v Line: 248
+Warning (10236): Verilog HDL Implicit Net warning at Divider.v(249): created implicit net for "sel3a1" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/Divider.v Line: 249
+Warning (10236): Verilog HDL Implicit Net warning at Divider.v(249): created implicit net for "sel3b1" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/Divider.v Line: 249
+Warning (10236): Verilog HDL Implicit Net warning at Divider.v(250): created implicit net for "sel3a2" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/Divider.v Line: 250
+Warning (10236): Verilog HDL Implicit Net warning at Divider.v(250): created implicit net for "sel3b2" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/Divider.v Line: 250
+Warning (10236): Verilog HDL Implicit Net warning at Divider.v(251): created implicit net for "sel3a3" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/Divider.v Line: 251
+Warning (10236): Verilog HDL Implicit Net warning at Divider.v(251): created implicit net for "sel3b3" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/Divider.v Line: 251
+Warning (10236): Verilog HDL Implicit Net warning at Divider.v(252): created implicit net for "sel3a4" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/Divider.v Line: 252
+Warning (10236): Verilog HDL Implicit Net warning at Divider.v(252): created implicit net for "sel3b4" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/Divider.v Line: 252
+Warning (10236): Verilog HDL Implicit Net warning at Divider.v(313): created implicit net for "sel4a0" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/Divider.v Line: 313
+Warning (10236): Verilog HDL Implicit Net warning at Divider.v(313): created implicit net for "sel4b0" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/Divider.v Line: 313
+Warning (10236): Verilog HDL Implicit Net warning at Divider.v(314): created implicit net for "sel4a1" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/Divider.v Line: 314
+Warning (10236): Verilog HDL Implicit Net warning at Divider.v(314): created implicit net for "sel4b1" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/Divider.v Line: 314
+Warning (10236): Verilog HDL Implicit Net warning at Divider.v(315): created implicit net for "sel4a2" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/Divider.v Line: 315
+Warning (10236): Verilog HDL Implicit Net warning at Divider.v(315): created implicit net for "sel4b2" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/Divider.v Line: 315
+Warning (10236): Verilog HDL Implicit Net warning at Divider.v(316): created implicit net for "sel4a3" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/Divider.v Line: 316
+Warning (10236): Verilog HDL Implicit Net warning at Divider.v(316): created implicit net for "sel4b3" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/Divider.v Line: 316
+Warning (10236): Verilog HDL Implicit Net warning at Divider.v(317): created implicit net for "sel4a4" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/Divider.v Line: 317
+Warning (10236): Verilog HDL Implicit Net warning at Divider.v(317): created implicit net for "sel4b4" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/Divider.v Line: 317
+Warning (10236): Verilog HDL Implicit Net warning at main.v(59): created implicit net for "AdderCout" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 59
+Warning (10236): Verilog HDL Implicit Net warning at main.v(67): created implicit net for "SubtractorCout" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 67
+Warning (10236): Verilog HDL Implicit Net warning at main.v(233): created implicit net for "D3" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 233
+Warning (10236): Verilog HDL Implicit Net warning at main.v(234): created implicit net for "D2" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 234
+Warning (10236): Verilog HDL Implicit Net warning at main.v(235): created implicit net for "D1" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 235
+Warning (10236): Verilog HDL Implicit Net warning at main.v(236): created implicit net for "D0" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 236
+Warning (10236): Verilog HDL Implicit Net warning at main.v(237): created implicit net for "U3" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 237
+Warning (10236): Verilog HDL Implicit Net warning at main.v(238): created implicit net for "U2" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 238
+Warning (10236): Verilog HDL Implicit Net warning at main.v(239): created implicit net for "U1" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 239
+Warning (10236): Verilog HDL Implicit Net warning at main.v(240): created implicit net for "U0" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 240
+Warning (10236): Verilog HDL Implicit Net warning at DecoderResults.v(14): created implicit net for "s1" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/DecoderResults.v Line: 14
+Warning (10236): Verilog HDL Implicit Net warning at DecoderResults.v(15): created implicit net for "s2" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/DecoderResults.v Line: 15
+Warning (10236): Verilog HDL Implicit Net warning at DecoderResults.v(19): created implicit net for "s3" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/DecoderResults.v Line: 19
+Warning (10236): Verilog HDL Implicit Net warning at DecoderResults.v(20): created implicit net for "s4" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/DecoderResults.v Line: 20
+Warning (10236): Verilog HDL Implicit Net warning at DecoderResults.v(27): created implicit net for "s5" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/DecoderResults.v Line: 27
+Warning (10236): Verilog HDL Implicit Net warning at DecoderResults.v(28): created implicit net for "s6" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/DecoderResults.v Line: 28
+Warning (10236): Verilog HDL Implicit Net warning at DecoderResults.v(29): created implicit net for "s7" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/DecoderResults.v Line: 29
+Warning (10236): Verilog HDL Implicit Net warning at DecoderResults.v(33): created implicit net for "s9" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/DecoderResults.v Line: 33
+Warning (10236): Verilog HDL Implicit Net warning at DecoderResults.v(37): created implicit net for "s10" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/DecoderResults.v Line: 37
+Warning (10236): Verilog HDL Implicit Net warning at DecoderResults.v(38): created implicit net for "s11" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/DecoderResults.v Line: 38
+Warning (10236): Verilog HDL Implicit Net warning at DecoderResults.v(39): created implicit net for "s12" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/DecoderResults.v Line: 39
+Warning (10236): Verilog HDL Implicit Net warning at DecoderResults.v(43): created implicit net for "s13" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/DecoderResults.v Line: 43
+Warning (10236): Verilog HDL Implicit Net warning at DecoderResults.v(44): created implicit net for "s14" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/DecoderResults.v Line: 44
+Info (12127): Elaborating entity "main" for the top level hierarchy
+Info (12128): Elaborating entity "FullAdder4Bit" for hierarchy "FullAdder4Bit:adder" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 61
+Info (12128): Elaborating entity "FullAdder1Bit" for hierarchy "FullAdder4Bit:adder|FullAdder1Bit:a0" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/FullAdder4Bit.v Line: 15
+Info (12128): Elaborating entity "FullSubtractor4Bit" for hierarchy "FullSubtractor4Bit:subtractor" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 69
+Info (12128): Elaborating entity "FullSubtractor1Bit" for hierarchy "FullSubtractor4Bit:subtractor|FullSubtractor1Bit:s0" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/FullSubtractor4Bit.v Line: 15
+Info (12128): Elaborating entity "Multiplier" for hierarchy "Multiplier:multiplier4bit" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 75
+Warning (10030): Net "sum3[4]" at Multiplier.v(6) has no driver or initial value, using a default initial value '0' File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/Multiplier.v Line: 6
+Info (12128): Elaborating entity "Divider" for hierarchy "Divider:divider4bit" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 81
+Info (12128): Elaborating entity "And4bit" for hierarchy "And4bit:and4bit" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 87
+Info (12128): Elaborating entity "Or4bit" for hierarchy "Or4bit:or4bit" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 93
+Info (12128): Elaborating entity "Xor4bit" for hierarchy "Xor4bit:xor4bit" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 99
+Info (12128): Elaborating entity "mux8to1" for hierarchy "mux8to1:mux0" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 112
+Info (12128): Elaborating entity "mux2to1" for hierarchy "mux8to1:mux0|mux2to1:mux1" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/mux8to1.v Line: 14
+Info (12128): Elaborating entity "mux4to1" for hierarchy "mux8to1:mux0|mux4to1:mux5" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/mux8to1.v Line: 44
+Info (12128): Elaborating entity "DecoderOps" for hierarchy "DecoderOps:decoderoperacoes" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 229
+Info (12128): Elaborating entity "ResultConverter" for hierarchy "ResultConverter:ResultToConverter" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 242
+Info (12128): Elaborating entity "DecoderResults" for hierarchy "DecoderResults:decoderUnits" File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 256
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "DividerOut[7]" is missing source, defaulting to GND File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 19
+    Warning (12110): Net "DividerOut[6]" is missing source, defaulting to GND File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 19
+    Warning (12110): Net "DividerOut[5]" is missing source, defaulting to GND File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 19
+    Warning (12110): Net "DividerOut[4]" is missing source, defaulting to GND File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 19
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "DividerOut[7]" is missing source, defaulting to GND File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 19
+    Warning (12110): Net "DividerOut[6]" is missing source, defaulting to GND File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 19
+    Warning (12110): Net "DividerOut[5]" is missing source, defaulting to GND File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 19
+    Warning (12110): Net "DividerOut[4]" is missing source, defaulting to GND File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 19
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "DividerOut[7]" is missing source, defaulting to GND File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 19
+    Warning (12110): Net "DividerOut[6]" is missing source, defaulting to GND File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 19
+    Warning (12110): Net "DividerOut[5]" is missing source, defaulting to GND File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 19
+    Warning (12110): Net "DividerOut[4]" is missing source, defaulting to GND File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 19
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "DividerOut[7]" is missing source, defaulting to GND File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 19
+    Warning (12110): Net "DividerOut[6]" is missing source, defaulting to GND File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 19
+    Warning (12110): Net "DividerOut[5]" is missing source, defaulting to GND File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 19
+    Warning (12110): Net "DividerOut[4]" is missing source, defaulting to GND File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 19
+Info (13014): Ignored 32 buffer(s)
+    Info (13019): Ignored 32 SOFT buffer(s)
+Warning (12241): 12 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "S[4]" is stuck at GND File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 16
+    Warning (13410): Pin "S[5]" is stuck at GND File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 16
+    Warning (13410): Pin "S[6]" is stuck at GND File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 16
+    Warning (13410): Pin "S[7]" is stuck at GND File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 16
+    Warning (13410): Pin "tens_b" is stuck at GND File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 13
+    Warning (13410): Pin "tens_c" is stuck at GND File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 13
+    Warning (13410): Pin "tens_g" is stuck at VCC File: C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/main.v Line: 13
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/output_files/PBL1CD.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 134 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 12 input pins
+    Info (21059): Implemented 32 output pins
+    Info (21061): Implemented 90 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 85 warnings
+    Info: Peak virtual memory: 4798 megabytes
+    Info: Processing ended: Wed Sep 24 22:01:12 2025
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:07
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/Luan/Documents/ULA-DigitalCircuits-ResultConverter/output_files/PBL1CD.map.smsg.
+
+

@@ -1,0 +1,100 @@
+module main(A, B, Cin, S, Cout, Selector, seg_a, seg_b, seg_c, seg_d, seg_e, seg_f, seg_g);
+
+input [3:0] A, B;
+input Cin;
+input [2:0] Selector;
+output [7:0] S;
+output Cout;
+
+//display
+output seg_a, seg_b, seg_c, seg_d, seg_e, seg_f, seg_g;
+
+wire [7:0]AdderOut, SubtractorOut, AndOut, OrOut, XorOut, MultiplierOut, DividerOut;
+
+FullAdder4Bit adder(
+	.A(A),
+	.B(B),
+	.Cin(Cin),
+	.Cout(AdderCout),
+	.S(AdderOut)
+);
+
+FullSubtractor4Bit subtractor(
+	.A(A),
+	.B(B),
+	.Cin(Cin),
+	.Cout(SubtractorCout),
+	.S(SubtractorOut)
+);
+
+
+Multiplier multiplier4bit(
+	.A(A),
+	.B(B),
+	.P(MultiplierOut)
+);
+
+Divider divider4bit(
+	.A(A),
+	.B(B),
+	.Q(DividerOut)
+);
+
+And4bit and4bit(
+	.A(A),
+	.B(B),
+	.S(AndOut)
+);
+
+Or4bit or4bit(
+	.A(A),
+	.B(B),
+	.S(OrOut)
+);
+
+Xor4bit xor4bit(
+	.A(A),
+	.B(B),
+	.S(XorOut)
+);
+
+mux8to1 mux[7:0](
+	.Add(AdderOut),       //000
+	.Sub(SubtractorOut),  //001
+	.Mul(MultiplierOut),  //010
+	.Div(DividerOut),    //011
+	.And(AndOut),         //100
+	.Or(OrOut),           //101
+	.Xor(XorOut),         //110
+	.NotUse(8'b00000000), //111
+	.Selector(Selector),
+	.Y(S)
+);
+
+mux8to1 muxCout(
+	.Add(AdderCout), 
+	.Sub(SubtractorCout), 
+	.Mul(1'b0), 
+	.Div(1'b0), 
+	.And(1'b0), 
+	.Or(1'b0), 
+	.Xor(1'b0), 
+	.NotUse(1'b0),        
+	.Selector(Selector),
+	.Y(Cout)
+);
+
+DecoderOps decoderoperacoes(
+	.A(S[2]), 
+	.B(S[1]),
+	.C(S[0]),
+	.a(seg_a),
+	.b(seg_b),
+	.c(seg_c),
+	.d(seg_d),
+	.e(seg_e),
+	.f(seg_f),
+	.g(seg_g)
+);
+
+endmodule

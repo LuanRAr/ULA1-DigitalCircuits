@@ -1,0 +1,46 @@
+module FullSubtractor4Bit(A, B, Cin, Cout, S);
+input [3:0] A, B;
+input Cin;
+output [7:0] S;
+output Cout;
+
+wire c0, c1, c2, c3;
+
+FullSubtractor1Bit s0 (
+	.A(A[0]),
+	.B(B[0]),
+	.Cin(Cin),
+	.Cout(c0),
+	.S(S[0])
+);
+
+FullSubtractor1Bit s1 (
+	.A(A[1]),
+	.B(B[1]),
+	.Cin(c0),
+	.Cout(c1),
+	.S(S[1])
+);
+
+FullSubtractor1Bit s2 (
+	.A(A[2]),
+	.B(B[2]),
+	.Cin(c1),
+	.Cout(c2),
+	.S(S[2])
+);
+
+FullSubtrator1Bit s3 (
+	.A(A[3]),
+	.B(B[3]),
+	.Cin(c2),
+	.Cout(Cout),
+	.S(S[3])
+);
+
+and and4(S[4], 1'b0, 1'b0);
+and and5(S[5], 1'b0, 1'b0);
+and and6(S[6], 1'b0, 1'b0);
+and and7(S[7], 1'b0, 1'b0);
+
+endmodule

@@ -1,0 +1,114 @@
+module ResultConverter (
+    input [7:0] muxOut,
+    output D0, D1, D2, D3, U0, U1, U2, U3, Overflow
+);
+    wire B0_n, B1_n, B2_n, B3_n, B4_n, B5_n, B6_n, B7_n;
+
+    wire d3_term1, d3_term2, d3_term3;
+    wire d2_term1, d2_term2, d2_term3;
+    wire d1_term1, d1_term2, d1_term3, d1_term4, d1_term5;
+    wire d0_term1, d0_term2, d0_term3, d0_term4, d0_term5, d0_term6, d0_term7, d0_term8, d0_term9, d0_term10, d0_term11;
+    wire u3_term1, u3_term2, u3_term3, u3_term4, u3_term5, u3_term6, u3_term7, u3_term8, u3_term9, u3_term10;
+    wire u2_term1, u2_term2, u2_term3, u2_term4, u2_term5, u2_term6, u2_term7, u2_term8, u2_term9, u2_term10, u2_term11, u2_term12;
+    wire u1_term1, u1_term2, u1_term3, u1_term4, u1_term5, u1_term6, u1_term7, u1_term8, u1_term9, u1_term10, u1_term11, u1_term12, u1_term13;
+    wire u0_term1, u0_term2, u0_term3;
+    wire f_term;
+
+    // NOT 
+    not (B0_n, muxOut[0]);
+    not (B1_n, muxOut[1]);
+    not (B2_n, muxOut[2]);
+    not (B3_n, muxOut[3]);
+    not (B4_n, muxOut[4]);
+    not (B5_n, muxOut[5]);
+    not (B6_n, muxOut[6]);
+    not (B7_n, muxOut[7]);
+    
+    // D3 
+    and (d3_term1, B7_n, muxOut[6], B5_n, muxOut[4]);
+    and (d3_term2, B7_n, muxOut[6], muxOut[5], B4_n, B3_n, B2_n);
+	 and (d3_term3, B7_n, muxOut[6], muxOut[5], B4_n, B3_n, B1_n, B0_n);
+    or (D3, d3_term1, d3_term2, d3_term3);
+	 
+    //D2
+    and (d2_term1, B7_n, B6_n, muxOut[5], B4_n, muxOut[2]);
+    and (d2_term2, B7_n, B6_n, B5_n, muxOut[4]);
+    and (d2_term3, B7_n, muxOut[6], B5_n, B4_n);
+    or (D2, d2_term1, d2_term2, d2_term3);
+		
+	 //D1	
+    and (d1_term1, B7_n, B6_n, B5_n, muxOut[4], muxOut[2]);
+    and (d1_term2, B7_n, B6_n, B5_n, muxOut[4], muxOut[3]);
+    and (d1_term3, B7_n, B6_n, muxOut[5], B4_n, B3_n);
+    and (d1_term4, B7_n, B6_n, muxOut[4], muxOut[3], muxOut[2]);
+	 and (d1_term5, B7_n, muxOut[6], B5_n, B4_n);
+    or (D1, d1_term1, d1_term2, d1_term3, d1_term4);
+	
+	 //D0	
+    and (d0_term1, B7_n, B5_n, B4_n, muxOut[3], muxOut[1]);//
+    and (d0_term2, B7_n, B5_n, B4_n,  muxOut[3],muxOut[2]);//
+    and (d0_term3, B7_n, B6_n, B5_n, muxOut[4], B3_n, B2_n);//
+    and (d0_term4, B7_n, B5_n, muxOut[3], muxOut[2], muxOut[1]);//
+    and (d0_term5, B7_n, B6_n, muxOut[5], B3_n, muxOut[2]);//
+    and (d0_term6, B7_n, B6_n, muxOut[5], muxOut[4], muxOut[3], B2_n);//
+	 and (d0_term7, B7_n, muxOut[6], B5_n, B4_n, muxOut[2], muxOut[1]);//
+	 and (d0_term8, B7_n, muxOut[6], B5_n, B4_n, muxOut[3]);//
+	 and (d0_term9, B7_n, muxOut[6], B5_n, muxOut[3], muxOut[1]);//
+	 and (d0_term10, B7_n, muxOut[6], B5_n, muxOut[3], muxOut[2]);//
+	 and (d0_term11, B7_n, muxOut[5], B4_n, B3_n, B2_n);//
+    or (D0, d0_term1, d0_term2, d0_term3, d0_term4, d0_term5, d0_term6, d0_term7, d0_term8, d0_term9, d0_term10, d0_term11);
+    
+	 //U3
+    and (u3_term1, B7_n, B6_n, B5_n, B4_n, muxOut[3], B2_n, B1_n);//
+    and (u3_term2, B7_n, B6_n, B5_n, muxOut[4], B3_n, B2_n, muxOut[1]);//
+    and (u3_term3, B7_n, B6_n, B5_n, muxOut[4], muxOut[3], muxOut[2], B1_n);//
+    and (u3_term4, B7_n, B6_n, muxOut[5], B4_n, B3_n, muxOut[2], muxOut[1]);//
+    and (u3_term5, B7_n, B6_n, muxOut[5], muxOut[4], B3_n, B2_n, B1_n);//
+    and (u3_term6, B7_n, B6_n, muxOut[5], muxOut[4], muxOut[3], B2_n, muxOut[1]);//
+    and (u3_term7, B7_n, muxOut[6], B5_n, B4_n, B3_n, muxOut[2], B1_n);//
+    and (u3_term8, B7_n, muxOut[6], B5_n, B4_n, muxOut[3], muxOut[2], muxOut[1]);//
+    and (u3_term9, B7_n, muxOut[6], B5_n, muxOut[4], muxOut[3], B2_n, B1_n);//
+    and (u3_term10, B7_n, muxOut[6], muxOut[5], B4_n, B3_n, B2_n, muxOut[1]);//
+    or (U3, u3_term1, u3_term2, u3_term3, u3_term4, u3_term5, u3_term6, u3_term7, u3_term8, u3_term9, u3_term10);
+	
+	 //U2
+    and (u2_term1, B7_n, B6_n, B4_n, B3_n, muxOut[2], muxOut[1]);//
+    and (u2_term2, B7_n, B6_n, B5_n, B4_n, muxOut[3], B2_n, B1_n);//
+    and (u2_term3, B7_n, B6_n, B5_n, muxOut[4], muxOut[3], muxOut[2], muxOut[1]);//
+    and (u2_term4, B7_n, B6_n, muxOut[5], B4_n, B3_n, muxOut[2]);//
+    and (u2_term5, B7_n, B6_n, muxOut[5], B4_n, muxOut[2], muxOut[1]);//
+    and (u2_term6, B7_n, muxOut[6], B4_n, B3_n, B2_n, muxOut[1]);//
+    and (u2_term7, B7_n, muxOut[6], B5_n, B4_n, muxOut[2], muxOut[1]);//
+    and (u2_term8, B7_n, muxOut[6], B5_n, B4_n, muxOut[3], muxOut[2]);//
+    and (u2_term9, B7_n, muxOut[6], B5_n, muxOut[4], B3_n, muxOut[2], muxOut[1]);//
+	 and (u2_term10, B7_n, muxOut[6], B5_n, muxOut[4], muxOut[3], B2_n, B1_n);//
+    and (u2_term11, B7_n, muxOut[6], muxOut[5], B4_n, B3_n, B2_n);//
+	 and (u2_term12, B7_n, B6_n, muxOut[4], muxOut[3], B2_n, muxOut[1]);//
+	 and (u2_term13, B7_n, B6_n, muxOut[5], muxOut[4], B2_n, B1_n);//
+	 or (U2, u2_term1, u2_term2, u2_term3, u2_term4, u2_term5, u2_term6, u2_term7, u2_term8, u2_term9, u2_term10, u2_term11, u2_term12);
+	
+	 //U1
+    and (u1_term1, B7_n, B5_n, B4_n, muxOut[3], muxOut[2], B1_n);//
+    and (u1_term2, B7_n, B6_n, B5_n, muxOut[4], B3_n, B2_n, B1_n);//
+    and (u1_term3, B7_n, B6_n, B5_n, muxOut[4], muxOut[3], B2_n, muxOut[1]);//
+    and (u1_term4, B7_n, B6_n, muxOut[5], B4_n, muxOut[3], muxOut[1]);//
+    and (u1_term5, B7_n, B6_n, muxOut[5], B3_n, muxOut[2], B1_n);//
+    and (u1_term6, B7_n, B6_n, muxOut[5], muxOut[4], muxOut[3], B2_n, B1_n);//
+    and (u1_term7, B7_n, B6_n, muxOut[5], muxOut[3], muxOut[2], muxOut[1]);//
+    and (u1_term8, B7_n, muxOut[6], B5_n, B4_n, muxOut[3], B1_n);//
+    and (u1_term9, B7_n, muxOut[6], B5_n, muxOut[3], muxOut[2], B1_n);//
+    and (u1_term10, B7_n, muxOut[5], B4_n, B3_n, B2_n, B1_n);//
+    and (u1_term11, B7_n, B6_n, B5_n, B4_n, B3_n, muxOut[1]);//
+    and (u1_term12, B7_n, B5_n, muxOut[4], B3_n, muxOut[2], muxOut[1]);//
+    and (u1_term13, B7_n, muxOut[6], B5_n, B3_n, B2_n, muxOut[1]);
+    or (U1, u1_term1, u1_term2, u1_term3, u1_term4, u1_term5, u1_term6, u1_term7, u1_term8, u1_term9, u1_term10, u1_term11, u1_term12, u1_term13);
+
+    and (u0_term1, B7_n, B6_n, muxOut[0]);
+	 and (u0_term2, B7_n, B5_n, muxOut[0]);
+	 and (u0_term3, B7_n, B4_n, B3_n, B2_n, muxOut[0]);
+    or (U0, u0_term1, u0_term2, u0_term3);
+    
+    and (f_term, B7_n, muxOut[6], muxOut[5], B4_n, B3_n, muxOut[2], B1_n, B0_n);
+    or (Overflow, f_term);
+
+endmodule

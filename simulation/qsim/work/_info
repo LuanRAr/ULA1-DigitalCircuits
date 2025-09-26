@@ -1,0 +1,126 @@
+m255
+K4
+z2
+!s11f MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/Luan/Documents/PBL 1 UNIDADE CD/simulation/qsim
+vdiv
+Z0 !s110 1758715696
+!i10b 1
+!s100 RFD<K^kTkfdf]m]ng6o[H2
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I;I1kk4[GA[D`HjS1ITide2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 d/home/aluno/ULA-DigitalCircuits-ResultConverter/simulation/qsim
+Z4 w1758715695
+Z5 8PBL1CD.vo
+Z6 FPBL1CD.vo
+!i122 16
+L0 32 399
+Z7 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z8 !s108 1758715696.000000
+Z9 !s107 PBL1CD.vo|
+Z10 !s90 -work|work|PBL1CD.vo|
+!i113 1
+Z11 o-work work
+Z12 tCvgOpt 0
+vdiv_vlg_vec_tst
+R0
+!i10b 1
+!s100 VeoJCfEDHMAYAHdQl`5cJ2
+R1
+IkLQYVANMQl0gRlJ4P2<590
+R2
+R3
+R4
+8Waveform1.vwf.vt
+FWaveform1.vwf.vt
+!i122 17
+L0 30 60
+R7
+r1
+!s85 0
+31
+R8
+!s107 Waveform1.vwf.vt|
+!s90 -work|work|Waveform1.vwf.vt|
+!i113 1
+R11
+R12
+vhard_block
+Z13 !s110 1758731946
+!i10b 1
+!s100 9R9j28I22WzYkdg>^IC[o0
+R1
+IRKh?LWj]ClzmbA[A[jJ<P1
+R2
+R3
+Z14 w1758731946
+R5
+R6
+!i122 20
+L0 2528 45
+R7
+r1
+!s85 0
+31
+Z15 !s108 1758731946.000000
+R9
+R10
+!i113 1
+R11
+R12
+vmain
+R13
+!i10b 1
+!s100 ki;828GAMTOQbL8JRb:kP1
+R1
+I[BEIS==hX72oWgjz]GiYS3
+R2
+R3
+R14
+R5
+R6
+!i122 20
+L0 32 2495
+R7
+r1
+!s85 0
+31
+R15
+R9
+R10
+!i113 1
+R11
+R12
+vmain_vlg_vec_tst
+R13
+!i10b 1
+!s100 4nNI[@;HANYEzPf_U7O;C3
+R1
+Ik:Xc2eY7<aCPNe3kEO1C[0
+R2
+R3
+w1758731945
+8Waveform2.vwf.vt
+FWaveform2.vwf.vt
+!i122 21
+L0 30 141
+R7
+r1
+!s85 0
+31
+R15
+!s107 Waveform2.vwf.vt|
+!s90 -work|work|Waveform2.vwf.vt|
+!i113 1
+R11
+R12

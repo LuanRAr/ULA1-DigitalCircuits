@@ -1,0 +1,51 @@
+module Divider (A, B, Q, R);
+    input [3:0] A, B;
+    output [3:0] Q; // quociente
+    output [3:0] R; // resto
+
+    wire [3:0] s1, s2, s3, s4; 
+    wire c1, c2, c3, c4;
+
+    FullSubtrator4Bit sub1 (
+        .A(A),
+        .B(B),
+        .Cin(1'b0),
+        .S(s1),
+        .Cout(c1)
+    );
+
+    FullSubtrator4Bit sub2 (
+        .A(s1),
+        .B(B),
+        .Cin(1'b0),
+        .S(s2),
+        .Cout(c2)
+    );
+
+    FullSubtrator4Bit sub3 (
+        .A(s2),
+        .B(B),
+        .Cin(1'b0),
+        .S(s3),
+        .Cout(c3)
+    );
+
+    FullSubtrator4Bit sub4 (
+        .A(s3),
+        .B(B),
+        .Cin(1'b0),
+        .S(s4),
+        .Cout(c4)
+    );
+
+    and (Q[0], c1);
+    and (Q[1], c2);
+    and (Q[2], c3);
+    and (Q[3], c4);
+
+    and (R[0], s4[0]);
+    and (R[1], s4[1]);
+    and (R[2], s4[2]);
+    and (R[3], s4[3]);
+
+endmodule
