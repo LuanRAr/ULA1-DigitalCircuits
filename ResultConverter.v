@@ -1,6 +1,6 @@
 module ResultConverter (D3, D2, D1, D0, U3, U2, U1, U0, Ov, b);
     // Inputs
-    input [7:0] b,
+    input [7:0] b;
 
     // Outputs
     output D3, D2, D1, D0, U3, U2, U1, U0, Ov;

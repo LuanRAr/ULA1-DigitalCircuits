@@ -21,8 +21,6 @@ wire Ov;
 wire [7:0]AdderOut, SubtractorOut, AndOut, OrOut, XorOut, MultiplierOut, DividerOut;
 
 
-
-
 // Define a flag zero como 1 sempre que o resultado S for 0.
 wire s_or_sum1, s_or_sum2, s_or_sum3, s_or_sum4, s_or_sum5, s_or_sum6, s_or_sum7;
 or or1 (s_or_sum1, S[0], S[1]);
